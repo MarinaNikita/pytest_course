@@ -11,11 +11,12 @@ def test_login_form(driver):
     driver.find_element(By.XPATH, USERNAME_FIELD).send_keys(LOGIN)
   
     # вводим валидный пароль в поле "Password"
-    password_field = driver.find_element(By.XPATH, PASSWORD_FIELD).send_keys(PASSWORD)
+    driver.find_element(By.XPATH, PASSWORD_FIELD).send_keys(PASSWORD)
 
     # кликаем на кнопку "Login"
     driver.find_element(By.XPATH, LOGIN_BUTTON).click()
 
     time.sleep(5)
     assert driver.current_url == "https://www.saucedemo.com/inventory.html"
+
 
